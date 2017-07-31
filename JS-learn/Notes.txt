@@ -1,0 +1,130 @@
+
+
+.js-lang
+
+ --> scripting lang for web-pages in browser-envi
+ +
+ --> server-side lang  on Node.js
+ --> Mobile Appln
+
+ --------------------------------------
+
+ good features
+
+ -> OOP & FP
+ -> dynamic types
+ -> closure support
+ -> single-threaded lang , we can do concurrent actions
+ -> Non Blocking IO
+
+ ----------------------------------------
+
+ when/where to use ?
+
+
+  on event , do any actions async
+
+  ----------------------------------------
+
+    .js-lang is based on 'ECMAScript spec'
+
+    latest : ES6 
+
+  ------------------------------------------
+
+
+  how to run .js program ?
+
+
+  using 'Js-Engine"/runtime
+
+  browser envi
+
+  a. chrome  ==> v8(c++)
+  b. firefox ==> rhino(java)
+  c. IE/Edge ==> chakra
+  d. Safari  ==> Nitro
+
+  .....
+
+  other envi
+
+  a. Node.Js  ==> v8
+  b. JVM      ==> rhino / nashorn
+  c. Apache CouchDB
+  d. Adobe
+  ...
+
+
+-------------------------------------------------------------
+
+
+
+.js-lang
+
+
+  --> single-threaded
+  --> Non-Blocking IO
+
+  --------------------------------
+
+  browser e.g chrome
+
+    1. Javascript Engine ( v8 )   - based on ECMAScript spec
+       a. call-stack
+       b. heap
+    2. Web APIs ( DOM , XHR, Timer API, HTMLl APIs) - w3c standards
+    3. Event/Message/Callback Queue
+    4. Event-Loop
+
+----------------------------------
+
+
+// sync vs async
+
+
+
+// sync
+
+
+function f1(){
+
+}
+function f2(){
+    f1();// sync........
+}
+
+
+// async
+
+// way-1
+
+// on event , every event handler executes async by default
+
+// way-2
+
+    a. using Promise API
+    b. RxJS 
+    c. async & await
+
+
+   
+
+-----------------------------------------------------
+
+
+-----------------------------------------
+
+  1. data-types
+  2. execution-context / scope chain
+  3. FP principles
+  4. closures
+  5. Inheritance
+  6. Obj- constraints
+  7. ES6/Es7 New features
+  8. concurrency model
+  9. JS-modules
+  10. 'this' keyword / owner of execution context
+
+  ----------------------------------------- 
+
