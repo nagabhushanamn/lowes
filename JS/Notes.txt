@@ -1,0 +1,93 @@
+
+
+what .js-lang can do on HTML-page in browser ?
+
+using browser provided APIs, can bring any magic to web-page
+
+using DOM API
+--------------
+ -> can create,query,update,delete HTML elements
+ -> can change element's inner/text content
+ -> can change element's attributes
+ -> can change element's style
+ -> can listen events
+ -> can do form-validation
+ ....
+
+using XHR
+----------
+ -> can communicate with server-side async, update resp in existing page
+
+using Timer API
+---------------
+ -> can do timer actions
+
+ using HTML5 APIs
+------------------
+
+ref : https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/HTML5
+
+
+----------------------------------------------------
+
+
+complexities of plain-js 
+
+
+-> browser compatibility...
+-> performance ( e.g DOM manipulation )
+-> Memory management ( clean un-used DOM elements , un-register event-handlers)
+-> Data-Binding is manual
+-> code organization is difficult
+
+
+soln :
+
+ use good .js-lib and F.Ws
+
+
+ 1. JQuery
+
+        ==> DOM utility lib
+
+
+ 2. Backbone       
+
+     -> Model / Collections
+     -> Views
+     -> Routing
+
+
+ 3. MVC/MVVM based F.Ws
+
+    a. Angular 1.x
+    b. Knockout
+    c. Ember
+    ....
+
+  3. UI component Based lits
+
+
+    a. DOJO
+    b. ExtJS ( commercial )  from sencha
+
+
+
+
+
+
+    w3c ==> web-component/custom-elements standards   ( draft )
+
+
+    1. React.js
+    2. Angular
+    3. Vue
+    4. PolymerJS
+
+    ....
+
+
+
+
+
+

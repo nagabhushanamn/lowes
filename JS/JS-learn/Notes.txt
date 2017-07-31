@@ -82,8 +82,6 @@
 
 // sync vs async
 
-
-
 // sync
 
 
@@ -127,4 +125,14 @@ function f2(){
   10. 'this' keyword / owner of execution context
 
   ----------------------------------------- 
+
+
+  // ES6 new features
+
+  A.new-syntax
+
+    a. let,const keywords with block-scope
+    b. arrow functions
+
+  B.new-APIs
 
