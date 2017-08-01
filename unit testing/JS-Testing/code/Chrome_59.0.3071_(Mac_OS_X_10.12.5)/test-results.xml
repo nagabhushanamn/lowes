@@ -1,0 +1,52 @@
+<?xml version="1.0"?>
+<testsuite name="Chrome 59.0.3071 (Mac OS X 10.12.5)" package="" timestamp="2017-07-30T13:37:26" id="0" hostname="NAGABHUSHANAMs-MacBook-Pro.local" tests="13" errors="0" failures="4" time="0.077">
+  <properties>
+    <property name="browser.fullName" value="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36"/>
+  </properties>
+  <testcase name="LoginValidatorClientSpec when validating empty username and password should be able to display an error message when username is not entered" time="0.009" classname="Chrome_59_0_3071_(Mac_OS_X_10_12_5).LoginValidatorClientSpec"/>
+  <testcase name="LoginValidatorClientSpec when validating empty username and password should be able to display an error message when password is not entered" time="0.001" classname="Chrome_59_0_3071_(Mac_OS_X_10_12_5).LoginValidatorClientSpec"/>
+  <testcase name="LoginValidatorClientSpec when validating username format should be able to display an error message when username format is not correct" time="0" classname="Chrome_59_0_3071_(Mac_OS_X_10_12_5).LoginValidatorClientSpec"/>
+  <testcase name="LoginValidatorClientSpec when validating password format should be able to display an error message when password format is not correct" time="0.001" classname="Chrome_59_0_3071_(Mac_OS_X_10_12_5).LoginValidatorClientSpec"/>
+  <testcase name="RegistrationClientSpec when validating empty username and password should be able to display an error message when username is not entered" time="0.001" classname="Chrome_59_0_3071_(Mac_OS_X_10_12_5).RegistrationClientSpec"/>
+  <testcase name="RegistrationClientSpec when validating empty username and password should be able to display an error message when password is not entered" time="0.003" classname="Chrome_59_0_3071_(Mac_OS_X_10_12_5).RegistrationClientSpec"/>
+  <testcase name="RegistrationClientSpec when validating matched passwords should be able to display an error message when passwords are not matched" time="0.001" classname="Chrome_59_0_3071_(Mac_OS_X_10_12_5).RegistrationClientSpec"/>
+  <testcase name="RegistrationClientSpec when validating username format should be able to display an error message when username format is not correct" time="0.001" classname="Chrome_59_0_3071_(Mac_OS_X_10_12_5).RegistrationClientSpec"/>
+  <testcase name="RegistrationClientSpec when validating password format should be able to display an error message when password format is not correct" time="0.001" classname="Chrome_59_0_3071_(Mac_OS_X_10_12_5).RegistrationClientSpec"/>
+  <testcase name="RegistrationClientSpec when user registration is requested should be able to register a valid user correctly" time="0.035" classname="Chrome_59_0_3071_(Mac_OS_X_10_12_5).RegistrationClientSpec">
+    <failure type="">Expected 'Operation' to be 'passing'.
+    at failureCallBack (js-test/jasmine/spec/RegistrationClientSpec.js:113:26)
+    at weatherapp.RegistrationClient.registrationReady (js-src/RegistrationClient.js:9:6079)
+    at XMLHttpRequest.xmlhttp.onreadystatechange (js-src/RegistrationClient.js:9:4868)
+</failure>
+  </testcase>
+  <testcase name="RegistrationClientSpec when user registration is requested should fail when a specific user id is already registered" time="0.008" classname="Chrome_59_0_3071_(Mac_OS_X_10_12_5).RegistrationClientSpec">
+    <failure type="">Expected '' to equal '776'.
+    at failureCallBack (js-test/jasmine/spec/RegistrationClientSpec.js:135:20)
+    at weatherapp.RegistrationClient.registrationReady (js-src/RegistrationClient.js:9:6079)
+    at XMLHttpRequest.xmlhttp.onreadystatechange (js-src/RegistrationClient.js:9:4868)
+</failure>
+  </testcase>
+  <testcase name="WeatherClientSpec when getting the weather information should be able to get the weather of a valid location (Cairo)" time="0.006" classname="Chrome_59_0_3071_(Mac_OS_X_10_12_5).WeatherClientSpec">
+    <failure type="">Expected 'Operation' to be 'passing'.
+    at failureCallBack (js-test/jasmine/spec/WeatherClientSpec.js:32:26)
+    at weatherapp.WeatherClient.weatherInformationReady (js-src/WeatherClient.js:9:2547)
+    at XMLHttpRequest.xmlhttp.onreadystatechange (js-src/WeatherClient.js:9:1482)
+</failure>
+  </testcase>
+  <testcase name="WeatherClientSpec when getting the weather information should fail when getting the weather information of an invalid location" time="0.01" classname="Chrome_59_0_3071_(Mac_OS_X_10_12_5).WeatherClientSpec">
+    <failure type="">Expected '' to equal '777'.
+    at failureCallBack (js-test/jasmine/spec/WeatherClientSpec.js:54:20)
+    at weatherapp.WeatherClient.weatherInformationReady (js-src/WeatherClient.js:9:2547)
+    at XMLHttpRequest.xmlhttp.onreadystatechange (js-src/WeatherClient.js:9:1482)
+</failure>
+  </testcase>
+  <system-out>
+    <![CDATA[Chrome 59.0.3071 (Mac OS X 10.12.5) LOG: 'Registration failed'
+,Chrome 59.0.3071 (Mac OS X 10.12.5) LOG: 'Registration of duplicate user failed'
+,Chrome 59.0.3071 (Mac OS X 10.12.5) LOG: 'failed'
+,Chrome 59.0.3071 (Mac OS X 10.12.5) LOG: 'Getting the weather information of an invalid location failed: '
+
+]]>
+  </system-out>
+  <system-err/>
+</testsuite>
