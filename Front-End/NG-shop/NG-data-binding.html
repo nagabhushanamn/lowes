@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="./bower_components/bootstrap/dist/css/bootstrap.css" rel="stylesheet">
+
+    <style>
+        .ng-scope {
+            border: 1px solid red;
+            padding: 10px;
+            margin: 5px;
+        }
+    </style>
+
+</head>
+
+<body class="container">
+
+    <div class="page-header"> NG-data-binding </div>
+
+    <div ng-app="demo">
+        <span class="badge">{{name}}</span>
+        <span class="badge">{{color}}</span>
+        <button class="btn btn-danger" ng-click="changeColor()">change color</button>
+
+        <div ng-controller="ColorController" class="well">
+            <span class="badge">{{color}}</span>
+            <button class="btn btn-danger" ng-click="changeColor()">change color</button>
+
+            <div ng-controller="TextController" class="well">
+                <span class="badge">TextController</span>
+                <span class="badge">{{message}}</span>
+            </div>
+
+        </div>
+        <div ng-controller="ColorController" class="well">
+            <span class="badge">{{color}}</span>
+        </div>
+
+        <hr/>
+
+        <div class="well" ng-controller="UserController">
+            Name : <input ng-model="name" />
+            <button ng-click="loadName()">Load (ng-click)</button>
+            <button onclick="loadName()">Load (on-click)</button>
+            <button ng-click="resetName()">Reset</button>
+            <hr/> Hello : <span ng-bind="name"></span>
+        </div>
+
+    </div>
+
+
+    <script src="./bower_components/angular/angular.js"></script>
+    <script>
+        var mod = angular.module('demo', []);
+        mod.run(function ($rootScope) {
+            $rootScope.color = "red";
+            $rootScope.changeColor = function () {
+                $rootScope.color = "green";
+            }
+            $rootScope.$on('color-event', function (e, data) {
+                $rootScope.color = data.color
+            });
+        });
+
+        mod.controller('ColorController', function ($scope) {
+            $scope.color = "blue"
+            $scope.changeColor = function () {
+                $scope.color = "yellow";
+                //$scope.$parent.color = "yellow";
+                $scope.$emit('color-event', { color: 'Yellow' });
+                $scope.$broadcast('color-event', { color: 'Yellow' });
+            }
+        });
+        mod.controller('TextController', function ($scope) {
+            $scope.message = '';
+            $scope.$on('color-event', function (e, data) {
+                $scope.message = "color changed";
+            });
+        });
+
+        mod.controller('UserController', function ($scope,$rootScope) {
+            $scope.name = "";
+            $scope.loadName = function () {
+                $scope.name = "Nag";
+            }
+
+            window.loadName = function () {
+                console.log('loading name in no angular func');
+                $scope.name = "Nagabhushanam";
+                $rootScope.name = "LOWES";
+                //$scope.$digest();
+                $scope.$apply();
+            }
+
+            $scope.resetName = function () {
+                $scope.name = "";
+            }
+
+            $scope.$watch('name', function (newName, oldName) {
+                console.log(oldName);
+                console.log(newName);
+                console.log('$scope.name custom watcher running..');
+            });
+
+        })
+    </script>
+</body>
+
+</html>

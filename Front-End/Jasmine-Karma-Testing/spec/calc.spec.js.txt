@@ -1,0 +1,20 @@
+/**
+ * 
+ */
+
+describe('calc suite', function() {
+
+	it('sud add two nums', function() {
+		expect(add(1, 2)).toBe(3)
+	})
+	it('sud sub two nums', function() {
+		expect(sub(1, 2)).toBe(-1)
+	})
+	it('sud mul two nums', function() {
+		expect(mul(1, 2)).toBe(2)
+	})
+	it('sud div two nums', function() {
+		expect(div(1, 1)).toBe(1)
+	})
+
+});

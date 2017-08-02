@@ -1,0 +1,31 @@
+
+
+ oo principle
+ -------------
+ 
+ 	-> single responsibility 
+ 	-> open for extention & closed for modification
+ 	-> Inverion of Control
+ 	-> dependency Injection
+ 	
+ 	
+
+  
+  1. dependent
+  2. dependency
+  
+  -------------------
+  
+  
+  e.g shop-app
+  
+  	 a. BillingImpl  : getTotalPrice(cart)  ==> dependent
+  	 b. PriceMatrix  : getPrice(item)       ==> dependency ( collaborator )
+  	 c. 
+  	 
+  	  ......
+  	  
+  	  
+  	  
+  	  
+  	  

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="./bower_components/bootstrap/dist/css/bootstrap.css" rel="stylesheet">
+</head>
+
+<body class="container">
+
+    <div class="page-header"> NG-shop </div>
+
+    <div ng-app="shop">
+
+        <div ng-controller="ShopController as sc">
+            <!-- View -->
+            <div class="list-group">
+                <div class="list-group-item" ng-hide="product.notAvailable" ng-repeat="product in products | limitTo:10 | orderBy:'price'">
+                    <div class="row">
+                        <div class="col-md-3 col-xs-3 col-sm-3">
+                            <img ng-src="{{product.image}}" class="img-responsive" />
+                        </div>
+                        <div class="col-md-9 col-xs-9 col-sm-9">
+                            <product-title></product-title>    
+                            <hr/>
+                            <product-tabs></product-tabs>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+    <script src="./bower_components/angular/angular.js"></script>
+    <script src="./src/app.js"></script>
+</body>
+
+</html>

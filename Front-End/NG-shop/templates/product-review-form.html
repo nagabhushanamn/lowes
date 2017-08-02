@@ -1,0 +1,25 @@
+<div class="panel panel-primary">
+    <div class="panel-heading"> Review Form </div>
+    <div class="panel-body">
+
+        <form novalidate name="reviewForm" ng-controller="ReviewFormController" ng-submit="reviewForm.$valid&&submitReview(product)">
+            <div class="form-group">
+                <label>stars</label>
+                <select required class="form-control" ng-model="review.stars" ng-options="n for n in [1,2,3,4,5]">
+                                                    </select>
+            </div>
+            <div class="form-group" ng-class="{'has-error':reviewForm.author.$dirty && reviewForm.author.$invalid}">
+                <label>author</label>
+                <input required class="form-control" name="author" ng-model="review.author" />
+            </div>
+            <div class="form-group">
+                <label>body</label>
+                <textarea required class="form-control" ng-model="review.body"></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary"> submit </button> is Form valid : {{reviewForm.$valid}}
+        </form>
+
+
+
+    </div>
+</div>

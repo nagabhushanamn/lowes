@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="./bower_components/bootstrap/dist/css/bootstrap.css" rel="stylesheet">
+    <link href="./bower_components/jquery-ui/themes/black-tie/jquery-ui.css" rel="stylesheet">
+
+    <style>
+        .ng-scope,.ng-isolate-scope {
+            border: 1px solid red;
+            padding: 10px;
+            margin: 5px;
+        }
+    </style>
+
+</head>
+
+<body class="container">
+    <div class="page-header"> NG-directives </div>
+
+    <div ng-app="App">
+
+        <div class="well" ng-controller="ColorController">
+
+            <input ng-model="color" />
+            <hr/>
+            <div hello-world color="color"></div>
+            <div hello-world ></div>
+
+        </div>
+
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.11/angular.js"></script>
+    <script>
+        var app = angular.module('App', []);
+        app.directive('helloWorld', function () {
+            return {
+                restrict: 'AECM',
+                replace: false,
+                //scope: false,
+                //scope: true,
+                scope:{
+                    color:'=color'
+                },
+                templateUrl: 'templates/hello-world.html',
+                controller: function ($scope) {
+                    console.log('helloWorld:controller');
+                },
+                link: function (scope, jqEle, attr) {
+                    console.log('helloWorld:postLink');
+                    //console.log(scope.color);
+                    //scope.color = "blue";
+
+                    jqEle.on('mouseover', function () {
+                        jqEle.css('cursor', 'pointer');
+                    });
+                    jqEle.on('click', function () {
+                        console.log('changing color');
+                        //jqEle.find('div').css('background-color', '#def');
+                        scope.color = "#def";
+                        scope.$apply();
+                    });
+
+                    // if(attr.color){
+                    //     scope.color=attr.color;
+                    // }
+
+                }
+
+            };
+        });
+        app.controller('ColorController', function ($scope) {
+            $scope.color = "yellow"
+        });
+    </script>
+
+
+
+</body>
+
+</html>

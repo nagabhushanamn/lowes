@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="./bower_components/bootstrap/dist/css/bootstrap.css" rel="stylesheet">
+
+
+</head>
+
+<body class="container">
+
+    <div class="page-header"> NG-data-binding </div>
+
+    <div ng-app="demo">
+
+        <div class="well" ng-controller="UserController">
+
+            <select ng-model="userCount" ng-options="n for n in [5,10,20,50]">
+            </select>
+            <input ng-model="userCount" />
+            <table class="table ">
+                <tr ng-repeat="user in users">
+                    <td>{{user.fname}}</td>
+                    <td>{{user.lname}}</td>
+                </tr>
+            </table>
+
+        </div>
+
+    </div>
+
+
+    <script src="./bower_components/angular/angular.js"></script>
+    <script>
+        var mod = angular.module('demo', []);
+
+        mod.controller('UserController', function ($scope, $http) {
+            $scope.userCount = 5;
+
+            $scope.$watch('userCount',function(newCount,oldCount){
+                loadUsers(newCount);
+            });
+
+            function loadUsers(count) {
+                $http.get(`http://www.filltext.com/?rows=${count}&fname={firstName}&lname={lastName}`)
+                    .then(function (resp) {
+                        $scope.users = resp.data
+                    })
+            }
+
+        })
+    </script>
+</body>
+
+</html>

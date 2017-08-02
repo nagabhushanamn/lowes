@@ -1,0 +1,42 @@
+
+
+MVC / MVVM  ==> MV*
+
+
+==> filters
+==> 2-way data-binding
+
+----------------------
+
+on compilation-phase,
+
+ for each model prop, in scopes, 
+ angular will register 'watcher' expression
+
+ all watchers are executed by 'digest-loop'
+
+ we can register , out custom watchers 
+
+
+ ------------------------------------
+
+ NG-validation
+
+
+    pristine
+    dirty
+
+    untouched
+    touched
+
+    invalid
+    valid
+
+ -------------------------------------   
+
+
+
+
+provider
+
+    -> factory method ( $get )
