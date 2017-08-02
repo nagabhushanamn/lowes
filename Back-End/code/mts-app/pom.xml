@@ -82,6 +82,9 @@
 				<configuration>
 					<!-- <karmaExecutable>node node_modules/karma/.bin/karma</karmaExecutable> -->
 					<!-- <configFile>karma.conf.js</configFile> -->
+					<junitReportFile>src/main/webapp/resources/test-results.xml</junitReportFile>
+					<reportsDirectory>${project.build.directory}/karma-reports</reportsDirectory>
+					<reporters>dots,junit</reporters>
 				</configuration>
 			</plugin>
 		</plugins>
