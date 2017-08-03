@@ -1,0 +1,20 @@
+
+
+// mts 
+
+
+   service-layer  : process
+   
+   TxrService 
+   
+   	- doTxr(amount,fromAccNum,toAccNum)
+   
+   data-layer     : persist
+   
+   AccountRepository   
+   
+   	- loadAccount(num)
+   	- update(account) 
+   
+   
+   
